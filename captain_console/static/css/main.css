@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Roboto+Condensed:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+*, ::after ::before {
+    box-sizing: border-box;
+}
+
+li, a, button {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.img-responsive {
+    background: transparent;
+
+}
+
+.navbar-collapse {
+
+}
