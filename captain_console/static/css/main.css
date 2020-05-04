@@ -8,7 +8,7 @@
 }
 
 
-.logo_img {
+.logo_img py
     background: transparent;
     margin-top: 0;
 }
@@ -25,6 +25,7 @@
 .btn-default:hover {
     background-color: #6c757d;
     text-decoration-color: white;
+    .fa
 
 }
 
@@ -35,10 +36,14 @@
 
 .fa-search {
     background-color: transparent;
-    background: transparent;
+    background: none;
     color: #777;
     border: none;
+
+
 }
+
+
 
 
 #textboxid{
