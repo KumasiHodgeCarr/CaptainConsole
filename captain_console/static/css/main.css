@@ -9,6 +9,7 @@
     margin-right: auto;
     margin-left: auto;
     padding: 1rem;
+    justify-content: space-between;
 }
 
 .logo_img {
@@ -40,5 +41,14 @@
 
 }
 
+.myAccount {
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+    margin-right: 5vh;;
+}
 
+.navbar-collapse {
+    padding-right: 3rem;
+    padding-left: 10rem;
+}
 
