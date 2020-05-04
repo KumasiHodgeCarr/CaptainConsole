@@ -1,27 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Roboto+Condensed:wght@700&display=swap');
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: white;
-}
-
-*, ::after ::before {
     box-sizing: border-box;
 }
 
-li, a, button {
-    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
-    font-weight: 500;
-    font-size: 16px;
-}
 
-.img-responsive {
+.logo_img {
     background: transparent;
+    margin-top: 0;
+}
+
+.btn-default {
+    padding-top: -10px;
+    background: transparent;
+    left: 25px;
+    border-left: none;
+    border-radius: 0px;
+}
+
+
+.btn-default:hover {
+    background-color: #6c757d;
+    text-decoration-color: white;
 
 }
 
-.navbar-collapse {
+.form-control {
+    border-radius: 0px;
+    border-right: none;
+}
+
+.fa-search {
+    background-color: transparent;
+    background: transparent;
+    color: #777;
+    border: none;
+}
+
+
+#textboxid{
 
 }
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+.navbar-left {
+    margin-right: 0;
+    display: flex;
+    right: 100px;
+    float: right;
+    margin-left: 70px;
+}
+
+
+
