@@ -4,4 +4,12 @@
         <h2> Welcome to the home app!</h2>
      </div>
 
+     <!-- homepage images and text -->
+
+     {% for image in homepageimage %}
+         <h4> {{ image.name }}</h4>
+         <p> {{ image.price }}</p>
+     {% endfor %}
+
+
  {% endblock %}

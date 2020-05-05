@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# uppfæra við vild
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'captain_home.apps.CaptainConfig',
+    'consoles.apps.ConsolesConfig',
+    'games.apps.GamesConfig'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'captain_console.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vexqujnf',
+        'USER': 'vexqujnf',
+        'PASSWORD': 'l5BaVXOc99YQvNPwEKzphTsSigNVpH-x',
+        'HOST': 'drona.db.elephantsql.com',
+        'PORT': '5432'
     }
 }
 
