@@ -9,3 +9,6 @@ class HomeMainImage(models.Model):
     game = models.ForeignKey(Games, on_delete=models.CASCADE)
     image = models.ForeignKey(Gamesimage, on_delete=models.CASCADE, default='1')
 
+
+
+

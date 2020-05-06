@@ -7,14 +7,19 @@ class Games(models.Model):
     description = models.CharField(max_length=999, blank=True)
     price = models.FloatField()
 
+    def __str__(self):
+        return "{} {} {}".format(self.name,self.description,self.price)
+
 
 class Gamesimage(models.Model):
     image = models.CharField(max_length=999)
     game = models.ForeignKey(Games, on_delete=models.CASCADE)
 
-class GamesMainimage(models.Model):
-    game = models.ForeignKey(Games, on_delete=models.CASCADE)
-    image = models.ForeignKey(Gamesimage,on_delete=models.CASCADE,default='1')
+    def __str__(self):
+        return self.image
+
+
+
 
 
 

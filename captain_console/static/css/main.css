@@ -1,54 +1,250 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Roboto+Condensed:wght@700&display=swap');
-
 * {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-}
-.container-fluid {
-    margin-right: auto;
-    margin-left: auto;
-    padding: 1rem;
-    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    color: darkgrey;
+    list-style: none;
+    text-decoration: none;
 }
 
-.logo_img {
-    background: transparent;
-    margin-top: 0;
+
+/* navigation */
+.navbar {
+    display: table;
+    border-color: black;
 }
 
-.form-control {
+
+::placeholder {
+    font-size: 14px;
+}
+
+#search {
+    border-left: none;
     border-radius: 0;
+    border-color: #cccccc;!important;
+}
+
+#search:hover {
+    background-color: #cccccc;
+
+}
+
+.form-control.mr-sm-2{
+    border-radius: 0;!important;
     border-right: none;
 }
 
-.fa-search {
-    background-color: transparent;
-    color: #777;
+.navbar-nav li {
+    padding-right: .7rem;
 }
 
-.container-fluid {
-    padding: 1rem;
+
+.btn-outline-success {
+    border: none;
+}
+.my-sm-0 {
+    margin-left: -1.5vh;
+
 }
 
-.btn-default {
-    color: white;
-    border-left: none;
-    border-radius: 0;
-    margin-left: -1%;
-    background-color: black;
+.myAccount_btn{
+    border-radius: 8px;
+    margin-right: 3vh;
+    justify-content: center;
+    padding: 10px 32px;
+    text-align: center;
+}
+
+#myaccount_btn:hover #test{
+    background:  #F1A919;
+}
+.myAccount:hover {
+    text-decoration: none;!important;
     color: black;
-
 }
 
-.myAccount {
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 5px;
-    margin-right: 5vh;;
+.myAccount:hover #icon{
+    text-decoration: none;!important;
+    color: white;
+}
+
+.myAccount:hover #link_myaccount {
+    color: white;
 }
 
 .navbar-collapse {
     padding-right: 3rem;
-    padding-left: 10rem;
+    padding-left: 6rem;
+}
+
+.fa-shopping-cart {
+    padding: 15px 32px;
+    justify-content: center;
+
+}
+
+.fa-shopping-cart:hover {
+    color: black;
+}
+
+#link_myaccount {
+    text-decoration: none;
+    color: darkgrey;
+}
+#link_myaccount:hover {
+    color: black;
+}
+
+/* slider */
+
+
+.carousel-item {
+    height: 300px;
+    text-transform: uppercase;
+    border: none;
+    border-color: transparent;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+   object-fit:cover;
+   object-position:50% 50%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 38%;
+}
+
+.carousel-caption h5 {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1rem;
+}
+
+.carousel-caption p {
+    color: white;
+    font-size: 0.8rem;
+    text-shadow: .1rem .1rem .5rem black;
+    padding-bottom: 1 rem;
+}
+
+.carousel .btn{
+    border-width: medium;
+    border-color: white;
+    border-radius: 0;
+    font-size: 1.1rem;
+    background-color: transparent;
+    color: white;
+
+}
+
+
+
+
+/* links */
+
+.links {
+    padding: 60px 100px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.inner {
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+
+.inner .btn {
+    padding: 15px 60px;
+    border-radius: 0px;
+    border-color: black;
+}
+
+.inner .btn:hover {
+    color: white;
+    background-color: lightgray;
+}
+
+.inner .btn:hover #icon   {
+    color: white;
+}
+
+
+
+
+
+/* footer*/
+
+footer {
+    width: 100vw;
+    background-color: #33383c;
+    padding: 12px 0px;
+    display: block;
+    box-sizing: border-box;
+}
+
+footer ul li{
+    padding:1px 0px;
+}
+
+.captainConsole span , .support span ,  .language span{
+   color: #FFF;
+   font-weight: 800;
+   padding-bottom: 3px;
+   margin-bottom: 3px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 14px;
+   letter-spacing: 2px;
+    padding-left: 10%;
+}
+
+.captainConsole li a , .support li a , .language li a{
+    color:#FFF;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+.captainConsole li a  {
+    padding-left: 19%;
+}
+
+#about {
+    padding-left: 21%;
+}
+
+.support li a {
+    padding-left: 15%;
+}
+
+.language li a {
+    padding-left: 18%;
+}
+
+#icelandic {
+    padding-left: 17%;
+}
+
+.captainConsole , .support , .language {
+    list-style: none;
+}
+
+
+.row {
+
+  display: flex;
+  justify-content: space-between;
 }
 
