@@ -1,6 +1,5 @@
-from django.shortcuts import render
 from games.models import Gamesimage
-from consoles.models import ConsolesImage
+
 
 
 def Games_images(request):

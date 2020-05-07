@@ -1,0 +1,67 @@
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:2px;
+}
+
+.flexbox-item{
+    border:2px groove;
+    border-radius:5px;
+    margin:20px;
+    width: 25%;
+    height: auto;
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#line {
+    background-color: black;
+    margin-top: -1%;
+    margin-bottom: 5%;
+}
+.flexbox-item h2{
+    text-align: center;
+}
+.flexbox-item p{
+    text-align: center;
+    padding: 1px;
+}
+.whatYouNeed{
+    padding-top: 16%;
+    padding-left: 20px;
+    width: 100%;
+
+}
+
+.whatYouNeed p{
+    padding-right: 50%;
+    font-style: italic;
+
+}
+
+.hereForYou {
+    float: right;
+    width: 100%;
+    padding-right: 20px;
+    padding-top: 16%;
+}
+
+
+#space {
+   margin-bottom: 20px;
+    font-style: bold;
+}
+
+.hereForYou p{
+    text-align: right;
+    padding-left: 50%;
+    margin-bottom: 100px;
+    font-style: italic;
+}
+.hereForYou h2{
+    text-align: right;
+}

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#"><img alt="Captain Console Logo" src="../static/images/Captain-console.png" width="100" class="logo_img"> </a></a>
+  <a class="navbar-brand" href=" {% url 'homeindex' %}"><img alt="Captain Console Logo" src="../static/images/Captain-console.png" width="100" class="logo_img"> </a></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,11 +10,10 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search"><i class="fas fa-search"></i></</button>
     </form>
   </div>
-      <ul class="nav navbar-nav navbar-right" id="horizontal-list">
-    <li class="myAccount" id="myaccount_btn"> <button class="myAccount_btn" id="test"> <a href ="#" id="link_myaccount" > <i id="icon" class="far fa-user"></i> &nbsp;&nbsp;My Account</a></li></button>
 
-    <li class="bag"><a href=" /mybag/"> <i class="fas fa-shopping-cart" > </i> </a> </li>
-    </ul>
+    <a href="{% url 'myAccountindex' %}" class="myAccount_btn" id="account_btn"><i id="icon" class="far fa-user"></i> &nbsp;&nbsp;My Account</a>
+
+    <li class="bag"><a href=" {% url 'mybagindex' %}"> <i class="fas fa-shopping-cart" > </i> </a> </li>
 
   </div>
 </nav>

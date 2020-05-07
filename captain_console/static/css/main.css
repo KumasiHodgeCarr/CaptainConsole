@@ -6,6 +6,8 @@
 }
 
 
+
+
 /* navigation */
 .navbar {
     display: table;
@@ -54,6 +56,7 @@
 }
 
 .myAccount_btn{
+    text-decoration: none;
     border-radius: 8px;
     margin-right: 3vh;
     justify-content: center;
@@ -63,22 +66,21 @@
     border-color: darkslategray;
 }
 
-#myaccount_btn:hover #test{
-    background:  #F1A919;
+#account_btn {
+    text-decoration: none;
+    color: white;
 }
+
+
+
 .myAccount:hover {
-    text-decoration: none;!important;
-    color: black;
+    background-color: #F1A919;
+    color: #F1A919;
+}
+#account_btn:hover {
+    background-color: #F1A919;
 }
 
-.myAccount:hover #icon{
-    text-decoration: none;!important;
-    color: white;
-}
-
-.myAccount:hover #link_myaccount {
-    color: white;
-}
 
 .navbar-collapse {
     padding-right: 3rem;
@@ -164,9 +166,10 @@
 /* links */
 
 .links {
-    padding: 60px 100px;
+    padding: 90px 100px;
     width: 100%;
     text-align: center;
+
 
 }
 
@@ -174,14 +177,17 @@
     display: inline-block;
     padding-left: 2%;
     padding-right: 2%;
-
 }
 
 .inner .btn {
     padding: 15px 60px;
     border-radius: 0px;
     border-color: black;
+    box-shadow: 5px 10px #888888;
+    margin-top: -30px;
 }
+
+
 
 .inner .btn:hover {
     color: white;
