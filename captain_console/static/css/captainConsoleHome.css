@@ -1,0 +1,44 @@
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:2px;
+}
+
+.flexbox-item{
+    border:2px groove;
+    border-radius:5px;
+    margin:20px;
+    width: 25%;
+    height: auto;
+
+}
+.flexbox-item h2{
+    text-align: center;
+}
+.flexbox-item p{
+    text-align: center;
+    padding: 1px;
+    bottom: ;
+}
+.whatYouNeed{
+    padding-left: 20px;
+    width: 100%;
+}
+.whatYouNeed p{
+    padding-right: 50%;
+}
+
+.hereForYou {
+    float: right;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.hereForYou p{
+    text-align: right;
+    padding-left: 50%;
+}
+.hereForYou h2{
+    text-align: right;
+}
