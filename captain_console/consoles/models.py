@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Consoles(models.Model):
     name = models.CharField(max_length=255)
@@ -17,8 +18,4 @@ class ConsolesImage(models.Model):
 
 class ConsolesMainImage(models.Model):
     console = models.ForeignKey(Consoles, on_delete=models.CASCADE)
-    image = models.ForeignKey(ConsolesImage,on_delete=models.CASCADE,default='1')
-
-
-
-
+    image = models.ForeignKey(ConsolesImage,on_delete=models.CASCADE,default=1)

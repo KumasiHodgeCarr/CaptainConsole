@@ -1,7 +1,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    color: darkgrey;
     list-style: none;
     text-decoration: none;
 }
@@ -10,9 +9,13 @@
 /* navigation */
 .navbar {
     display: table;
-    border-color: black;
+    background-color: #2a1111;
 }
 
+.logo_img {
+    position: absolute;
+    top: 16%;
+}
 
 ::placeholder {
     font-size: 14px;
@@ -21,30 +24,33 @@
 #search {
     border-left: none;
     border-radius: 0;
-    border-color: #cccccc;!important;
+    border-color: darkslategray;!important;
+    background-color: black;!important;
+    color: #cccccc;!important;
+
 }
 
 #search:hover {
-    background-color: #cccccc;
+    background-color: gray;
 
 }
 
 .form-control.mr-sm-2{
     border-radius: 0;!important;
     border-right: none;
+    background-color: black;
+    border-color: darkslategray;
 }
 
 .navbar-nav li {
     padding-right: .7rem;
 }
 
-
 .btn-outline-success {
     border: none;
 }
 .my-sm-0 {
     margin-left: -1.5vh;
-
 }
 
 .myAccount_btn{
@@ -53,6 +59,8 @@
     justify-content: center;
     padding: 10px 32px;
     text-align: center;
+    background-color: black;
+    border-color: darkslategray;
 }
 
 #myaccount_btn:hover #test{
@@ -80,11 +88,12 @@
 .fa-shopping-cart {
     padding: 15px 32px;
     justify-content: center;
+    color: #cccccc;
 
 }
 
 .fa-shopping-cart:hover {
-    color: black;
+    color:  #F1A919;
 }
 
 #link_myaccount {
@@ -99,7 +108,7 @@
 
 
 .carousel-item {
-    height: 300px;
+    height: 100vh;
     text-transform: uppercase;
     border: none;
     border-color: transparent;
@@ -112,6 +121,7 @@
     min-height: 300px;
    object-fit:cover;
    object-position:50% 50%;
+    background-size: 10px;
 }
 
 .carousel-caption {
