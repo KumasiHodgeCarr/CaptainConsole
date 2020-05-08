@@ -19,3 +19,8 @@ class ConsolesImage(models.Model):
 class ConsolesMainImage(models.Model):
     console = models.ForeignKey(Consoles, on_delete=models.CASCADE)
     image = models.ForeignKey(ConsolesImage,on_delete=models.CASCADE,default=1)
+
+
+class Console_brand_type(models.Model):
+    brand = models.CharField(max_length=255)
+    image = models.CharField(max_length=999)

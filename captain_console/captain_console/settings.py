@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'captain_home.apps.CaptainConfig',
     'games.apps.GamesConfig',
     'consoles.apps.ConsolesConfig',
+    'user.apps.UserConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -131,4 +133,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
+LOGIN_URL = 'user/login'
+LOGIN_REDIRECT_URL = '/user/profile'
