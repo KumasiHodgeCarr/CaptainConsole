@@ -9,6 +9,7 @@
 
 
 /* navigation */
+
 .navbar {
     display: table;
     background-color: #2a1111;
@@ -67,10 +68,18 @@
 }
 
 #account_btn {
+    color: white;!important;
+}
+
+.btn-group {
+    position: absolute;
+    left: 150px;
+}
+
+#dropdownMenuLink {
     text-decoration: none;
     color: white;
 }
-
 
 
 .myAccount:hover {
@@ -80,7 +89,6 @@
 #account_btn:hover {
     background-color: #F1A919;
 }
-
 
 .navbar-collapse {
     padding-right: 3rem;

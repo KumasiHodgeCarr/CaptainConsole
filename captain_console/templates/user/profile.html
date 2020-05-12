@@ -1,0 +1,13 @@
+{% block content %}
+
+    <form class="form form-horizontal" method="post">
+        {% csrf_token %}
+        <img src=" {{ user.profile.profile_image }}" class="profile-image" width="400" height="400" />
+        {{ form }}
+
+        <input type="submit" class="btn btn-primary" value="Update" />
+
+
+
+    </form>
+{% endblock %}
