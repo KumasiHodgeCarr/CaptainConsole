@@ -1,6 +1,7 @@
  {% extends 'base.html' %}
   {% block content %}
-      <link rel="stylesheet" href="../../static/css/captainConsoleHome.css">
+      {% include 'picture.html' %}
+      {% include 'links.html' %}
 
       <div class="flexContainer">
 
@@ -27,4 +28,5 @@
             <p>We would be nothing without the gamers that's why we'll always try our best to help with anything</p>
         </div>
     </div>
+      {% include 'footer.html' %}
  {% endblock %}
