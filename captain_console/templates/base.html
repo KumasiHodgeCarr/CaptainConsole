@@ -38,9 +38,14 @@
 >>>>>>> 48c54d30f7d770f7be2fb5edc387c02b7a02738b
 
     </head>
-    
         {% include 'navigation.html' %}
-
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             {% block content %}
             {% endblock %}
 

@@ -132,8 +132,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+CRISPY_TEMPLATE_PACK ='bootstrap4'
+
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
 LOGIN_URL = 'user/login'
 LOGIN_REDIRECT_URL = '/user/profile'
