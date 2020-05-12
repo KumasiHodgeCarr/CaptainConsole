@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My bag</title>
-</head>
-<body>
-    <h2>Welcome to the my bag app</h2>
-</body>
-</html>
+ {% extends 'base.html' %}
+ {% block content %}
+    {% include 'picture.html' %}
+    {% include 'links.html' %}
+     <h1> Welcome to the bag!</h1>
+     {% include 'footer.html' %}
+ {% endblock %}

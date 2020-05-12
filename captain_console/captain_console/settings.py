@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'captain_home.apps.CaptainConfig',
     'games.apps.GamesConfig',
     'consoles.apps.ConsolesConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'crispy_forms',
+
 
 ]
 
