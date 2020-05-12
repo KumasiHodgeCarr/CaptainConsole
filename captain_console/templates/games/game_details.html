@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/game_details.css' %}" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="grid-image">
+                <h1>{{ game.name }} imagee</h1>
+                <img class="imgs" src="{{ games_slide.game }}" alt="">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <h1>{{ game.name }}</h1>
+            <h6>{{ game.price }}$</h6>
+            <p> {{ game.description }} </p>
+            <button type="button" class="btn btn-warning">Add to basket</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

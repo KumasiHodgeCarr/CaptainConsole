@@ -1,0 +1,18 @@
+body {
+    background: #efefef;
+}
+
+
+.grid-image {
+    background-color: ghostwhite;
+    width: 700px;
+    height: 450px;
+
+    -webkit-box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px black;
+    transition-duration: 0.5s;
+
+    vertical-align: top;
+    display: inline-block;
+    /* width: 120px; */
+}

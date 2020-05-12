@@ -1,0 +1,186 @@
+body {
+    background: #efefef;
+}
+
+
+.container {
+    max-width: 1500px;
+}
+
+.col-sm-6 {
+    max-width: 300px;
+    /* background-color: royalblue; */
+}
+
+.games {
+    max-width: 100%;
+    /* background-color: gray; */
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding-bottom: 50px;
+}
+
+.grid-item {
+    background-color: black;
+    width: 300px;
+    height: 350px;
+    max-width: ;
+    max-height: 350px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px black;
+    transition-duration: 0.5s;
+
+    vertical-align: top;
+    display: inline-block;
+    /* width: 120px; */
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+
+hr {
+    width: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+    float: right;
+}
+
+a {
+    color: black;
+    font-family: helvetica;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    text-decoration: none;
+}
+.imgs {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+}
+
+#foot {
+    margin-top: 50px;
+}
+
+.consoleName {
+    margin-left: 10px;
+}
+
+.consoleName:hover {
+    color: #f0ad4e;
+    cursor: pointer;
+}
+
+.gameName {
+    /* text-align: left; */
+    color: white;
+    font-size: 20px;
+}
+
+.gameName:hover {
+    color: #f0ad4e;
+}
+
+.gamePrice {
+    color: #f0ad4e;
+}
+
+
+.form-check-input {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.form-check-input:hover {
+
+}
+.btn-primary {
+    /* background-color: #F1A919; */
+    background-color: #f0ad4e;
+}
+
+
+/* CHECKBOX */
+.checkbox {
+    padding-left: 20px;
+  }
+
+  .checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+  }
+
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555555;
+  }
+
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+  }
+

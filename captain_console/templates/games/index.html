@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/games.css' %}" />
+
+<!-- The grid-->
+<!-- <div class="grid-container">
+    {% for game in gamepagegames %}
+    <div class="grid-item">
+        <h4> {{ game.name }}</h4>
+        <p> {{ game.price }}</p>
+    </div>
+    {% endfor %}
+</div> -->
+
+
+<div class="container">
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" style="font-size: 12px;">Name</a>
+            <a class="dropdown-item" href="#" style="font-size: 12px;">Price High To Low</a>
+            <a class="dropdown-item" href="#" style="font-size: 12px;">Price Low To High</a>
+        </div>
+      </div>
+
+    <h2>Collections</h2>
+    <p>Select desired game console</p>
+    <hr/>
+    <div class="row">
+        <!-- <div class="col-sm-6">
+        {% for console in consolepageconsoles %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="">
+                <label class="form-check-label"><p class="consoleName" style="font-size: 30px;">{{ console.name }}</p></label>
+            </div>
+        {% endfor %}
+        </div> -->
+
+        <div class="col-sm-6">
+            <form role="form">
+                <div class="row">
+                    <fieldset>
+                      {% for console in consolepageconsoles %}
+                      <div class="checkbox checkbox-warning">
+                        <input id="checkbox5" type="checkbox" checked="">
+                        <label for="checkbox5">
+                                      {{ console.name }}
+                                    </label>
+                      </div>
+                      {% endfor %}
+      
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+
+      <div class="col-sm-9 games">
+        <div class="grid-container">
+            {% for game in games_slide %}
+            <div class="grid-item">
+                <img class="imgs" src="{{ game }}" alt="">
+                <p class="gamePrice"> {{ game.game.price }}$</p>
+                <p class="gameName"> {{ game.game.name }}</p>
+                <button type="button" class="btn btn-warning">Add to basket</button>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+
+
+
+      <!-- <div class="container">
+        <form role="form">
+          <div class="row">
+            <div class="col-md-4">
+              <fieldset>
+                {% for console in consolepageconsoles %}
+                <div class="checkbox checkbox-warning">
+                  <input id="checkbox5" type="checkbox" checked="">
+                  <label for="checkbox5">
+                                {{ console.name }}
+                              </label>
+                </div>
+                {% endfor %}
+
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div> -->
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+>>>>>>> 12049e78bfcc3b6a95b25a960d67559b8040c71b
