@@ -1,31 +1,29 @@
 {% extends 'base.html' %}
-
 {% load crispy_forms_tags %}
 {% block content %}
 
 
     <div class="content-section">
         <div class="media">
-            <img class="rounded-circle account-img" width="350" height="350" src="{{ user.profile.profile_image}}"/>
+            <img class="rounded-circle account-img" width="350" height="350" src="{{ user.profile_image}}"/>
             <div class="media-body">
                 <h2 class="account-heading"> {{ user.username }}</h2>
                 <p class="text-secondary"> {{ user.email }}</p>
             </div>
         </div>
 
-    <form class="form form-horizontal" method="post", enctype="multipart/form-data">
+    <form method="POST", enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Profile info</legend>
             {{ user_form|crispy }}
             {{ profile_form|crispy }}
-
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Update</button>
         </div>
     </form>
     </div>
-        <a href="{% url 'change_password' %}">Change Password</a>
 
+        <a href="{% url 'change_password' %}">Change Password</a>
 {% endblock content %}
