@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from . import views
@@ -9,3 +11,4 @@ urlpatterns = [
     path('profile',views.profile, name='profile'),
     path('changepassword', views.change_password, name='change_password'),
 ]
+
