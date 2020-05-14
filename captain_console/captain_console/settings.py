@@ -146,3 +146,5 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = 'user/login'
 LOGIN_REDIRECT_URL = '/user/profile'
+
+ACCOUNT_LOGOUT_ON_GET = True

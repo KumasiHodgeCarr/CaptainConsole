@@ -2,9 +2,10 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
-from user.forms.profile_form import ProfileUpdateForm, UserRegistrationForm, UserUpdateForm
+from user.forms.profile_form import ProfileUpdateForm, UserRegistrationForm, UserUpdateForm,UserDeleteForm
 
 # Create your views here.
 from user.models import Profile
@@ -67,3 +68,21 @@ def change_password(request):
     return render(request, 'user/change_password.html', {
         'form': form
     })
+
+
+@login_required
+def deleteuser(request):
+    if request.method == 'POST':
+        delete_form = UserDeleteForm(request.POST, instance=request.user)
+        user = request.user
+        user.delete()
+        messages.info(request, 'Your account has been deleted.')
+        return redirect('blog-home')
+    else:
+        delete_form = UserDeleteForm(instance=request.user)
+
+    context = {
+        'delete_form': delete_form
+    }
+
+    return render(request, 'user/delete_account.html', context)

@@ -23,18 +23,24 @@
       <hr>
     </div>
 
+    <div>
+        {% for console in console_brand %}
+            <h4>{{ console.brand }} </h4>
+        {% endfor %}
+
+    </div>
   <div class="row">
         <div class="col-sm-3">
           <form role="form">
               <div class="row">
                   <fieldset>
-                      {% for console in game_table %}
-                      <div class="checkbox checkbox-warning">
-                      <input id="checkbox5" type="checkbox" checked="">
-                      <label for="checkbox5">
-                                      {{ console.name }}
-                                  </label>
-                      </div>
+                      {% for console in console_brand %}
+                        <div class="checkbox checkbox-warning">
+                            <input id="checkbox5" type="checkbox" checked="">
+                            <label for="checkbox5">
+                                 {{ console.brand }}
+                            </label>
+                        </div>
                       {% endfor %}
       
                   </fieldset>

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from games.models import Gamesimage, Games
+from consoles.models import Console_brand_type
 
 #from django import *
 
@@ -57,9 +58,4 @@ def get_game_by_id(request, id):
 def index(request):
     context = {'game_table': Games.objects.all().order_by('name')}
     return render(request, 'games/index.html', context)
-
-# def index2(request):
-#     context = {'console_table': Consoles.objects.all()}
-#     return render(request, 'games/index.html', context)
-
 
