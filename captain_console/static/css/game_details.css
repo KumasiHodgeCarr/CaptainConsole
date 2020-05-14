@@ -2,17 +2,35 @@ body {
     background: #efefef;
 }
 
+.container {
+    margin-top: 50px;
+    max-width: 1500px;
+    margin-bottom: 50px;
+}
 
 .grid-image {
     background-color: ghostwhite;
     width: 700px;
     height: 450px;
-
     -webkit-box-shadow: 0 0 10px #fff;
     box-shadow: 0 0 10px black;
     transition-duration: 0.5s;
+    margin-left: 135px;
+}
 
+.col-sm-4 {
     vertical-align: top;
-    display: inline-block;
-    /* width: 120px; */
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.imgs {
+    width: 700px;
+    height: 450px;
+}
+
+.btn-warning {
+    margin-left:310px;
 }
