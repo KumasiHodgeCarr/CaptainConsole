@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 
 from games.models import Gamesimage, Games
 
+#from django import *
+
 from consoles.models import Consoles
 # gamepagegames =  [
 #     { 'name': 'assassins creed', 'price' : 59.99 },
@@ -37,16 +39,25 @@ from consoles.models import Consoles
 #         'consolepageconsoles': consolepageconsoles
 #         })
 
-def index(request):
-    context = {'games_slide': Gamesimage.objects.all()}
-    return render(request, 'games/index.html', context)
+# def index(request):
+#     context = {'games_slide': Games.objects.all()}
+#     return render(request, 'games/index.html', context)
 
 
-def index(request):
-    context = {'consolepageconsoles': Consoles.objects.all()}
-    return render(request, 'games/index.html', context)
+# def index(request):
+#     context = {'consolepageconsoles': Consoles.objects.all()}
+#     return render(request, 'games/index.html', context)
 
 
 def get_game_by_id(request, id):
     context = {'game': get_object_or_404(Games, pk=id)}
     return render(request, 'games/game_details.html', context)
+
+
+def index(request):
+    context = {'game_table': Games.objects.all().order_by('name')}
+    return render(request, 'games/index.html', context)
+
+# def index2(request):
+#     context = {'console_table': Consoles.objects.all()}
+#     return render(request, 'games/index.html', context)
