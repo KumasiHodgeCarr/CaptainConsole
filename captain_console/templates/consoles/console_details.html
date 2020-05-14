@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/console_details.css' %}" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <!-- <div class="grid-image"> -->
+                <img class="" src="{{ console.image }}" alt="">
+            <!-- </div> -->
+        </div>
+        <div class="col-sm-4">
+            <h1>{{ console.name }}</h1>
+            <h3 class="text-warning">{{ console.price }}$</h3>
+            <p> {{ console.description }} </p>
+            <button type="button" class="btn btn-warning">Add to basket</button>
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
