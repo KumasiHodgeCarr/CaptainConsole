@@ -61,3 +61,5 @@ def index(request):
 # def index2(request):
 #     context = {'console_table': Consoles.objects.all()}
 #     return render(request, 'games/index.html', context)
+
+
