@@ -15,6 +15,8 @@
     background-color: #2a1111;
 }
 
+
+
 .logo_img {
     position: absolute;
     top: 16%;
@@ -114,6 +116,15 @@
     color: black;
 }
 
+.nav-link{
+    color: white;
+    margin-right: 5vh;
+
+}
+
+.nav-link:hover{
+    color: #F1A919;
+}
 /* slider */
 
 

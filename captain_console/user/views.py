@@ -5,13 +5,14 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
 
 from user.forms.profile_form import ProfileUpdateForm, UserRegistrationForm, UserUpdateForm
-from user.models import Profile
 
 # Create your views here.
+from user.models import Profile
+
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+        form = UserRegistrationForm(data = request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -19,28 +20,33 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegistrationForm()
-    return render(request, 'user/register.html', {'form': form})
+    return render(request, 'user/register.html',
+                  {'form': form
+                   })
+
 
 @login_required
 def profile(request):
+
     if request.method == 'POST':
-        user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST,
-                                         request.FILES,
-                                         instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,
+                               request.FILES,
+                               instance=request.user.profile)
+
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
             messages.success(request, f'Your account has been updated')
             return redirect('profile')
 
     else:
-        user_form = UserUpdateForm(instance=request.user)
-        profile_form = ProfileUpdateForm(instance=request.user.profile)
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
-        'user_form': user_form,
-        'profile_form': profile_form
+        'u_form' : u_form,
+        'p_form' : p_form
     }
 
     return render(request,'user/profile.html', context)
@@ -61,5 +67,3 @@ def change_password(request):
     return render(request, 'user/change_password.html', {
         'form': form
     })
-
-
