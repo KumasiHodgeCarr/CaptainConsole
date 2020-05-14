@@ -1,7 +1,67 @@
- {% extends 'base.html' %}
- {% block content %}
+{% extends 'base.html' %}
 
-     <h1> Welcome to the consoles app!</h1>
-     {% include 'footer.html' %}
 
- {% endblock %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/consoles.css' %}" />
+
+<div class="container">
+    <!-- <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Name</a>
+            <a class="dropdown-item" href="#">Price Low To High</a>
+            <a class="dropdown-item" href="#">Price High To Low</a>
+        </div>
+    </div> -->
+
+    <div class="container-fluid">
+        <h2>Collections</h2>
+        <p>Select desired brand</p>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <form role="form">
+                <div class="row">
+                    <fieldset>
+                        {% for console in console_table %}
+                        <div class="checkbox checkbox-warning">
+                        <input id="checkbox5" type="checkbox" checked="">
+                        <label for="checkbox5">
+                                        {{ console.brand }}
+                                    </label>
+                        </div>
+                        {% endfor %}
+        
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+  
+
+        <div class="col-sm-9 consoles">
+            <div class="grid-container">
+                {% for console in console_table %}
+                <a href="/consoles/{{ console.id }}">
+                    <div class="grid-item" href="/consoles/{{ console.id }}">
+                        <img class="imgs" src="{{ console.image }}" alt="">
+                        <p class="text-warning"><b>{{ console.price }}$</b></p>
+                        <p class="consoleName"><b>{{ console.name }}</b></p>
+                        <button type="button" class="btn btn-warning">Add to basket</button>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+  {% include 'footer.html' %}
+
+{% endblock %}
+

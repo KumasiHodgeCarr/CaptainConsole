@@ -17,62 +17,49 @@
             <a class="dropdown-item" href="#">Price High To Low</a>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       <h2>Collections</h2>
-      <p>Select desired game console</p>
+      <p>Select desired brand</p>
       <hr>
     </div>
 
-    <div class="row">
-        <!-- <div class="col-sm-6">
-        {% for console in consolepageconsoles %}
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="">
-                <label class="form-check-label"><p class="consoleName" style="font-size: 30px;">{{ console.name }}</p></label>
-            </div>
-        {% endfor %}
-        </div> -->
-
-      <div class="col-sm-6">
+  <div class="row">
+        <div class="col-sm-3">
           <form role="form">
               <div class="row">
                   <fieldset>
-                    <!-- {% for console in console_table %} -->
-                    <div class="checkbox checkbox-warning">
+                      {% for console in game_table %}
+                      <div class="checkbox checkbox-warning">
                       <input id="checkbox5" type="checkbox" checked="">
                       <label for="checkbox5">
-                                    <!-- {{ console.name }} -->
+                                      {{ console.name }}
                                   </label>
-                    </div>
-                    <!-- {% endfor %} -->
-    
+                      </div>
+                      {% endfor %}
+      
                   </fieldset>
               </div>
           </form>
       </div>
 
-      <div class="col-sm-9 games">
-        <div class="grid-container">
-          {% for game in game_table %}
+    <div class="col-sm-9 games">
+      <div class="grid-container">
+        {% for game in game_table %}
           <a href="/games/{{ game.id }}">
             <div class="grid-item" href="/games/{{ game.id }}">
-                <img class="imgs" src="{{ game.image }}" alt="">
-                <p class="text-warning"><b>{{ game.price }}$</b></p>
-                <p class="gameName"><b>{{ game.name }}</b></p>
-                <button id="bottom" type="button" class="btn btn-warning">Add to basket</button>
+              <img class="imgs" src="{{ game.image }}" alt="">
+              <p class="text-warning"><b>{{ game.price }}$</b></p>
+              <p class="gameName"><b>{{ game.name }}</b></p>
+              <button type="button" class="btn btn-warning">Add to basket</button>
             </div>
           </a>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
-
-      {% for game in console_table %}
-        <div>{{ game.name }}</div>
-      {% endfor %}
-
-
     </div>
+  </div>
 </div>
+
+  {% include 'footer.html' %}
 
 {% endblock %}
 
