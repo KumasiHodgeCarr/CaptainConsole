@@ -2,6 +2,9 @@
 {% load static %}
  {% block content %}
 
+ <link rel="stylesheet" href="{% static 'css/games.css' %}" />
+
+
   <!--Main layout-->
     <div class="container">
 
@@ -22,10 +25,8 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'item_list' %}">ALL</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'consoleindex' %}">Consoles</a>
@@ -33,6 +34,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'gamesindex' %}">Games</a>
             </li>
+
           </ul>
           <!-- Links -->
 
@@ -44,23 +46,42 @@
         </div>
         <!-- Collapsible content -->
 
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort by
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="name">Name</a>
+              <a class="dropdown-item" href="price">Price Low To High</a>
+              <a class="dropdown-item" href="#">Price High To Low</a>
+          </div>
+        </div>
+
       </nav>
       <!--/.Navbar-->
 
-      <!--Section: Products v.3-->
-      <section class="text-center mb-4">
+      <div class="col-sm-12 games">
+        <div class="grid-container">
+          {% for product in items %}
+              <div class="grid-item" href="">
+                <img class="imgs" src="{{ product.Product_image }}" alt="">
+                <p class="text-warning"><b>{{ product.Product_price }}$</b></p>
+                <p class="gameName"><b>{{ product.Product_name }}</b></p>
+                <button type="button" class="btn btn-warning">Add to basket</button>
+              </div>
+          {% endfor %}
+        </div>
+      </div>
 
-        <!--Grid row-->
+      <!-- <section class="text-center mb-4">
+
         <div class="row wow fadeIn">
             {%  for item  in items %}
 
-          <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4">
 
-            <!--Card-->
             <div class="card">
 
-              <!--Card image-->
               <div class="view overlay">
                 <img src=" {{ item.Product_image }}" class="card-img-top"
                   alt="">
@@ -68,11 +89,8 @@
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
-              <!--Card image-->
 
-              <!--Card content-->
               <div class="card-body text-center">
-                <!--Category & Title-->
                 <a href="" class="grey-text">
                   <h5> {{ item.get_Product_category_display }}</h5>
                 </a>
@@ -89,17 +107,14 @@
                 </h4>
 
               </div>
-              <!--Card content-->
 
             </div>
-            <!--Card-->
 
         </div>
-        <!--Grid row-->
             {% endfor %}
 
 
-      </section>
+      </section> -->
       <!--Section: Products v.3-->
 
       <!--Pagination-->
