@@ -25,5 +25,23 @@
 
 </div>
 
+<div class="col-sm-3">
+    <form role="form">
+        <div class="row">
+            <fieldset>
+                {% for console in console_brand %}
+                <div class="checkbox checkbox-warning">
+                <input id="checkbox5" type="checkbox" checked="">
+                <label for="checkbox5">
+                                {{ console_brand }}
+                            </label>
+                </div>
+                {% endfor %}
+
+            </fieldset>
+        </div>
+    </form>
+</div>
+
 
 {% endblock %}

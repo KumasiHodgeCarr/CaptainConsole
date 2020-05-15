@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{% static 'css/consoles.css' %}" />
 
 <div class="container">
-    <!-- <div class="dropdown">
+    <div class="dropdown">
         <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by
         </button>
@@ -16,7 +16,7 @@
             <a class="dropdown-item" href="#">Price Low To High</a>
             <a class="dropdown-item" href="#">Price High To Low</a>
         </div>
-    </div> -->
+    </div>
 
     <div class="container-fluid">
         <h2>Collections</h2>
@@ -31,8 +31,8 @@
                     <fieldset>
                         {% for console in console_table %}
                         <div class="checkbox checkbox-warning">
-                        <input id="checkbox5" type="checkbox" checked="">
-                        <label for="checkbox5">
+                        <input id="{{ console.id }}" type="checkbox" checked="">
+                        <label for="{{ console.id }}">
                                         {{ console.brand }}
                                     </label>
                         </div>
@@ -42,7 +42,11 @@
                 </div>
             </form>
         </div>
-  
+
+        <!-- {% if 'has-checkbox' in field.field.widget.attrs.class %}
+            <input type="checkbox">
+            {{ field }}
+        {% endif %} -->
 
         <div class="col-sm-9 consoles">
             <div class="grid-container">
