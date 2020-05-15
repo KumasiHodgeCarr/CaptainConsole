@@ -15,6 +15,13 @@
     background-color: #2a1111;
 }
 
+#navitems{
+    margin-left: 130vh;
+}
+
+ul .navbar {
+    float: right;
+}
 
 
 .logo_img {
@@ -26,7 +33,7 @@
     font-size: 14px;
 }
 
-#search {
+#search_btn{
     border-left: none;
     border-radius: 0;
     border-color: darkslategray;!important;
@@ -35,7 +42,7 @@
 
 }
 
-#search:hover {
+#search_btn:hover {
     background-color: gray;
 
 }

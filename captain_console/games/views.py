@@ -1,6 +1,8 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 
 from games.models import Gamesimage, Games
+from consoles.models import Console_brand_type
 
 from consoles.models import Console_brand_type
 
@@ -31,16 +33,16 @@ def get_game_by_id(request, id):
 
 
 def index(request):
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        games = [ {
+            'id'            : x.id,
+            'name'          : x.name,
+            'description'   : x.description,
+            'firstImage'    : x.image
+        } for x in Games.objects.filter(name__icontains=search_filter)]
+        return JsonResponse({'data': games})
+
     context = {'game_table': Games.objects.all().order_by('name')}
     return render(request, 'games/index.html', context)
 
-
-def console_brand_view(request):
-    context = {'console_brand' : Console_brand_type.objects.all().order_by('brand')}
-    return render(request, 'games/game_details.html',context)
-
-
-def brand_list(request):
-    brand_list = Consoles.objects.all()
-    brand_filter = ConsoleFilter(request.GET, queryset=brand_list)
-    return render(request, 'games/index.html', {'filter': brand_filter})

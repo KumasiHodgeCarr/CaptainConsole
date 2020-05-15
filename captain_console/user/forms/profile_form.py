@@ -31,5 +31,7 @@ class ProfileimageChange(forms.ModelForm):
         model = Profile
         fields = ['profile_image']
 
-
-
+class UserDeleteForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['is_active']

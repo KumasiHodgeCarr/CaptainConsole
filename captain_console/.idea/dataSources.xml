@@ -7,5 +7,13 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://drona.db.elephantsql.com:5432/vexqujnf</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="236436e3-7c95-4e5c-8ba2-0731816e42cf">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/captain_console/settings.py</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://drona.db.elephantsql.com:5432/vexqujnf</jdbc-url>
+    </data-source>
   </component>
 </project>
