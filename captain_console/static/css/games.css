@@ -119,9 +119,7 @@ a:hover {
     margin-top: 10px;
 }
 
-.form-check-input:hover {
 
-}
 
 
 /* CHECKBOX */
@@ -187,3 +185,10 @@ a:hover {
     border-color: #f0ad4e;
   }
 
+.checkbox-warning {
+    display: inline-block;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
