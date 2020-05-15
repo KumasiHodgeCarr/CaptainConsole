@@ -7,21 +7,60 @@
 <link rel="stylesheet" href="{% static 'css/consoles.css' %}" />
 
 <div class="container">
-    <div class="dropdown">
-        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sort by
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+
+        <!-- Navbar brand -->
+        <span class="navbar-brand">Categories:</span>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Name</a>
-            <a class="dropdown-item" href="#">Price Low To High</a>
-            <a class="dropdown-item" href="#">Price High To Low</a>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'item_list' %}">ALL</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'consoleindex' %}">Consoles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gamesindex' %}">Games</a>
+            </li>
+          </ul>
+          <!-- Links -->
+
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
         </div>
-    </div>
+        <!-- Collapsible content -->
+
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort by
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="name">Name</a>
+              <a class="dropdown-item" href="price">Price Low To High</a>
+              <a class="dropdown-item" href="#">Price High To Low</a>
+          </div>
+        </div>
+
+      </nav>
+      <!--/.Navbar-->
 
     <div class="container-fluid">
         <h2>Collections</h2>
         <p>Select desired brand</p>
-        <hr>
     </div>
 
     <div class="row">

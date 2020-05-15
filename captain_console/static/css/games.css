@@ -22,6 +22,7 @@ body {
 /* -----------------GRID----------------- */
 
 .grid-container {
+    justify-content: center;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: auto auto auto;
