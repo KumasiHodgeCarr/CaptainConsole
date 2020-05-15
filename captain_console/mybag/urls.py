@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name ='mybagindex'),
-    path('checkout.html', views.checkout, name='checkout')
+    path('checkout', views.checkout, name='checkout')
 ]
