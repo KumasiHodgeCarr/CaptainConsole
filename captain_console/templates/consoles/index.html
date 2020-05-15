@@ -46,12 +46,12 @@
 
         <div class="dropdown">
           <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort by
+            Sort by(not fully ready)
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="name">Name</a>
-              <a class="dropdown-item" href="price">Price Low To High</a>
-              <a class="dropdown-item" href="#">Price High To Low</a>
+              <a class="dropdown-item" href="">Name</a>
+              <a class="dropdown-item" href="">Price Low To High</a>
+              <a class="dropdown-item" href="">Price High To Low</a>
           </div>
         </div>
 
@@ -69,7 +69,7 @@
                 <div class="row">
                     <fieldset>
                         {% for console in console_table %}
-                        <div class="checkbox checkbox-warning">
+                        <div class="checkbox checkbox-warning" style="display: inline-block">
                         <input id="{{ console.id }}" type="checkbox" checked="">
                         <label for="{{ console.id }}">
                                         {{ console.brand }}
@@ -90,7 +90,7 @@
         <div class="col-sm-12 consoles">
             <div class="grid-container">
                 {% for console in console_table %}
-                <a href="/consoles/{{ console.id }}">
+                <a id="test" href="/consoles/{{ console.id }}">
                     <div class="grid-item" href="/consoles/{{ console.id }}">
                         <img class="imgs" src="{{ console.image }}" alt="">
                         <p class="text-warning"><b>{{ console.price }}$</b></p>

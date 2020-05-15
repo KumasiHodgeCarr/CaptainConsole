@@ -2,5 +2,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name ='mybagindex')
+    path('', views.index, name ='mybagindex'),
+    path('checkout.html', views.checkout, name='checkout')
 ]
