@@ -1,4 +1,4 @@
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
  {% block content %}
 
@@ -48,11 +48,11 @@
 
         <div class="dropdown">
           <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort by(Not fully ready)
+            Sort by
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Name(A-Z)</a>
-              <a class="dropdown-item" href="#">Price(low-high, high-low)</a>
+            <a class="dropdown-item" href="{% url 'product_by_name' %}">Name(A-Z)</a>
+            <a class="dropdown-item" href="{% url 'product_by_price' %}">Price(low-high, high-low)</a>
           </div>
         </div>
 

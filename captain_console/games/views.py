@@ -10,23 +10,6 @@ from consoles.models import Consoles
 
 from games.filters import ConsoleFilter
 
-# consolepageconsoles =  [
-#     { 'name': 'playstation1', 'description' : 'blah', 'brand' : 'sony', 'price' : 59.99 },
-#     { 'name': 'Xbox', 'description' : 'blah', 'brand' : 'Xbox', 'price' : 59.99 },
-#     { 'name': 'Nintendo', 'description' : 'blah', 'brand' : 'Nintendo', 'price' : 59.99 },
-#     { 'name': 'PC', 'description' : 'blah', 'brand' : 'PC', 'price' : 59.99 }
-
-# ]
-
-# Create your views here.
-
-# def index(request):
-#     return render(request, 'games/index.html', context={
-#         'gamepagegames': gamepagegames,
-#         'consolepageconsoles': consolepageconsoles
-#         })
-
-
 def get_game_by_id(request, id):
     context = {'game': get_object_or_404(Games, pk=id)}
     return render(request, 'games/game_details.html', context)
@@ -43,6 +26,15 @@ def index(request):
         } for x in Games.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': games})
 
-    context = {'game_table': Games.objects.all().order_by('name')}
+    context = {'game_table': Games.objects.all()}
     return render(request, 'games/index.html', context)
 
+
+def index_by_name(request):
+    context = {'game_table': Consoles.objects.all().order_by('name')}
+    return render(request, 'games/game_by_name.html', context)
+
+
+def index_by_price(request):
+    context = {'game_table': Consoles.objects.all().order_by('price')}
+    return render(request, 'games/game_by_price.html', context)
