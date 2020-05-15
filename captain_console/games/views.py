@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 
 from games.models import Gamesimage, Games
@@ -56,6 +57,16 @@ def get_game_by_id(request, id):
 
 
 def index(request):
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        games = [ {
+            'id'            : x.id,
+            'name'          : x.name,
+            'description'   : x.description,
+            'firstImage'    : x.image
+        } for x in Games.objects.filter(name__icontains=search_filter)]
+        return JsonResponse({'data': games})
+
     context = {'game_table': Games.objects.all().order_by('name')}
     return render(request, 'games/index.html', context)
 

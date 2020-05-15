@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'consoles.apps.ConsolesConfig',
     'user.apps.UserConfig',
-    'crispy_forms',
+    'production.apps.ProductionConfig',
+    'crispy_forms'
 
 
 ]
@@ -70,7 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'captain_console.context_processors.Games_images'
+                'captain_console.context_processors.Games_images',
             ],
         },
     },
