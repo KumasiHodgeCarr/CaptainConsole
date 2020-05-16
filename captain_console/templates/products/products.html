@@ -26,7 +26,7 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'item_list' %}">All</a>
+              <a class="nav-link" href="#">All</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'consoleindex' %}">Consoles</a>
@@ -48,69 +48,33 @@
 
         <div class="dropdown">
           <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
             Sort by(Not fully ready)
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Name(A-Z)</a>
-              <a class="dropdown-item" href="#">Price(low-high)</a>
+              <a class="dropdown-item" href="#">Price(low-high, high-low)</a>
+
+            Sort by(not fully ready)
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="">Name</a>
+              <a class="dropdown-item" href="">Price Low To High</a>
+              <a class="dropdown-item" href="">Price High To Low</a>
           </div>
         </div>
 
       </nav>
       <!--/.Navbar-->
 
-<<<<<<< HEAD
-      <!--Section: Products v.3-->
-      <section class="text-center mb-4">
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-            {%  for item  in items %}
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-
-              <!--Card image-->
-              <div class="view overlay">
-                <img src=" {{ item.Product_image }}" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <!--Card image-->
-
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h5> {{ item.get_Product_category_display }}</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text"> {{ item.Product_name }}
-                      <span class="badge badge-pill {{ item.get_Product_platform_display}}-color">Click for more information</span>
-                    </a>
-                  </strong>
-                </h5>
-
-                <h4 class="font-weight-bold blue-text">
-                  <strong>${{ item.Product_price }}</strong>
-                </h4>
-
-=======
       <div class="col-sm-12 games">
         <div class="grid-container">
           {% for product in items %}
-              <div class="grid-item" href="">
+              <div class="grid-item" onclick='location.href = " {{ product.get_absolute_url }}";'>
                 <img class="imgs" src="{{ product.Product_image }}" alt="">
                 <p class="text-warning"><b>{{ product.Product_price }}$</b></p>
                 <p class="gameName"><b>{{ product.Product_name }}</b></p>
                 <button type="button" class="btn btn-warning">Add to basket</button>
->>>>>>> b04bae40d12c533081c58d69b5c0c57c671d9d2d
               </div>
           {% endfor %}
         </div>

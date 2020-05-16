@@ -29,7 +29,15 @@ class Product(models.Model):
     Product_description = models.CharField(max_length=999, default='bla')
     Product_category    = models.CharField(choices=CATEGORY_CHOICES,max_length=2,blank=True)
     Product_platform    = models.CharField(choices=PLATFORM_CHOICES,max_length=2)
+    slug                = models.SlugField()
 
+    def __str__(self):
+        return self.Product_name
+
+    def get_absolute_url(self):
+        return reverse("production:product", kwargs= {
+            'slug': self.slug
+        })
 
 class Console(models.Model):
     product_id          = models.ForeignKey(Product, on_delete=models.CASCADE)
