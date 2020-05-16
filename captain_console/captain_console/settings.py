@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms'
 
 
+
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'captain_console.context_processors.Games_images',
             ],
+
         },
     },
 ]

@@ -2,6 +2,9 @@
 {% load static %}
  {% block content %}
 
+ <link rel="stylesheet" href="{% static 'css/games.css' %}" />
+
+
   <!--Main layout-->
     <div class="container">
 
@@ -22,17 +25,16 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'item_list' %}">All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Consoles</a>
+              <a class="nav-link" href="{% url 'consoleindex' %}">Consoles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Games</a>
+              <a class="nav-link" href="{% url 'gamesindex' %}">Games</a>
             </li>
+
           </ul>
           <!-- Links -->
 
@@ -44,9 +46,20 @@
         </div>
         <!-- Collapsible content -->
 
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort by(Not fully ready)
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Name(A-Z)</a>
+              <a class="dropdown-item" href="#">Price(low-high)</a>
+          </div>
+        </div>
+
       </nav>
       <!--/.Navbar-->
 
+<<<<<<< HEAD
       <!--Section: Products v.3-->
       <section class="text-center mb-4">
 
@@ -88,19 +101,20 @@
                   <strong>${{ item.Product_price }}</strong>
                 </h4>
 
+=======
+      <div class="col-sm-12 games">
+        <div class="grid-container">
+          {% for product in items %}
+              <div class="grid-item" href="">
+                <img class="imgs" src="{{ product.Product_image }}" alt="">
+                <p class="text-warning"><b>{{ product.Product_price }}$</b></p>
+                <p class="gameName"><b>{{ product.Product_name }}</b></p>
+                <button type="button" class="btn btn-warning">Add to basket</button>
+>>>>>>> b04bae40d12c533081c58d69b5c0c57c671d9d2d
               </div>
-              <!--Card content-->
-
-            </div>
-            <!--Card-->
-
+          {% endfor %}
         </div>
-        <!--Grid row-->
-            {% endfor %}
-
-
-      </section>
-      <!--Section: Products v.3-->
+      </div>
 
       <!--Pagination-->
       <nav class="d-flex justify-content-center wow fadeIn">

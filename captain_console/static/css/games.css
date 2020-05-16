@@ -22,6 +22,7 @@ body {
 /* -----------------GRID----------------- */
 
 .grid-container {
+    justify-content: center;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: auto auto auto;
@@ -76,7 +77,6 @@ a {
     color: black;
     font-family: helvetica;
     text-decoration: none;
-    text-transform: uppercase;
 }
 
 a:hover {
@@ -118,9 +118,7 @@ a:hover {
     margin-top: 10px;
 }
 
-.form-check-input:hover {
 
-}
 
 
 /* CHECKBOX */
@@ -186,3 +184,10 @@ a:hover {
     border-color: #f0ad4e;
   }
 
+.checkbox-warning {
+    display: inline-block;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}

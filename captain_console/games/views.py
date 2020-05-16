@@ -4,52 +4,11 @@ from django.shortcuts import render, get_object_or_404
 from games.models import Gamesimage, Games
 from consoles.models import Console_brand_type
 
-#from django import *
+from consoles.models import Console_brand_type
 
 from consoles.models import Consoles
-# gamepagegames =  [
-#     { 'name': 'assassins creed', 'price' : 59.99 },
-#     { 'name': 'fifa', 'price' : 59.99 },
-#     { 'name': 'super mario', 'price' : 59.99 },
-#     { 'name': 'skate 3', 'price' : 59.99 },
-#     { 'name': 'skate 2', 'price' : 59.99 },
-#     { 'name': 'fifa', 'price' : 59.99 },
-#     { 'name': 'super mario', 'price' : 59.99 },
-#     { 'name': 'skate 3', 'price' : 59.99 },
-#     { 'name': 'assassins creed', 'price' : 59.99 },
-#     { 'name': 'fifa', 'price' : 59.99 },
-#     { 'name': 'super mario', 'price' : 59.99 }
-# ]
 
-# consolepageconsoles =  [
-#     { 'name': 'playstation1', 'description' : 'blah', 'brand' : 'sony', 'price' : 59.99 },
-#     { 'name': 'Xbox', 'description' : 'blah', 'brand' : 'Xbox', 'price' : 59.99 },
-#     { 'name': 'Nintendo', 'description' : 'blah', 'brand' : 'Nintendo', 'price' : 59.99 },
-#     { 'name': 'PC', 'description' : 'blah', 'brand' : 'PC', 'price' : 59.99 }
-
-# ]
-
-# Create your views here.
-
-# def index(request):
-#     context = { 'games': Games.objects.all() }
-#     return render(request, 'games/index.html', context )
-
-# def index(request):
-#     return render(request, 'games/index.html', context={
-#         'gamepagegames': gamepagegames,
-#         'consolepageconsoles': consolepageconsoles
-#         })
-
-# def index(request):
-#     context = {'games_slide': Games.objects.all()}
-#     return render(request, 'games/index.html', context)
-
-
-# def index(request):
-#     context = {'consolepageconsoles': Consoles.objects.all()}
-#     return render(request, 'games/index.html', context)
-
+from games.filters import ConsoleFilter
 
 def get_game_by_id(request, id):
     context = {'game': get_object_or_404(Games, pk=id)}
@@ -67,6 +26,15 @@ def index(request):
         } for x in Games.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': games})
 
-    context = {'game_table': Games.objects.all().order_by('name')}
+    context = {'game_table': Games.objects.all()}
     return render(request, 'games/index.html', context)
 
+
+def index_by_name(request):
+    context = {'game_table': Consoles.objects.all().order_by('name')}
+    return render(request, 'games/game_by_name.html', context)
+
+
+def index_by_price(request):
+    context = {'game_table': Consoles.objects.all().order_by('price')}
+    return render(request, 'games/game_by_price.html', context)
