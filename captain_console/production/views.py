@@ -5,5 +5,5 @@ from .models import Product
 
 
 def item_list(request):
-    context = { 'items': Product.objects.all()}
+    context = { 'items': Product.objects.all().order_by('Product_name')}
     return render(request, "products/products.html",context)
