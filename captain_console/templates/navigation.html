@@ -12,7 +12,7 @@
     <div>
        <ul class="navbar-nav ">
            <li class="nav-item active" >
-               <a class="nav-link" id ="navitems" href="{% url 'item_list' %}"> Products <span class="sr-only">(current)</span></a>
+               <a class="nav-link" id ="navitems" href="{% url 'production:products' %}"> Products <span class="sr-only">(current)</span></a>
            </li>
        </ul>
     </div>
@@ -35,8 +35,11 @@
       </div>
     {% endif %}
     </div>
-    <div class="bag"> <a href=" {% url 'mybagindex' %}"> <i class="fas fa-shopping-cart" ></i>  </a> </div>
-
+    {% if user.is_authenticated  %}
+        <div class="bag"> <a href=" {% url 'production:order-summary' %}"> <i class="fas fa-shopping-cart" ></i>  </a> </div>
+    {% else %}
+        <div class="bag"> <a href=" {% url 'login' %}"> <i class="fas fa-shopping-cart" ></i>  </a> </div>
+    {% endif %}
 </nav>
 
 

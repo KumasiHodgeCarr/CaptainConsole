@@ -1,0 +1,46 @@
+ {% extends 'base.html' %}
+{% load static %}
+ {% block content %}
+
+ <link rel="stylesheet" href="{% static 'css/games.css' %}" />
+
+
+  <!--Main layout-->
+    <div class="container">
+
+     <div class="table-responsive text-nowrap">
+
+     <h2>Order Summary</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Item Price</th>
+
+      </tr>
+    </thead>
+    <body>
+    {% for order_item in object.items.all %}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ order_item.Product_name }}</td>
+        <td>{{ order_item.Product_price}}</td>
+        <td>{{ order_item.quantity }}</td>
+        <td>?</td>
+
+      </tr>
+
+    {% endfor %}
+
+    </body>
+  </table>
+
+</div>
+    <a href="{% url 'production:checkout' %}" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">Checkout</a>
+
+
+  <!--Main layout-->
+    {% endblock content %}
