@@ -45,6 +45,8 @@
             <p>{{ object.Product_description }}</p>
 
             {% comment %}<form class="d-flex justify-content-left">
+            <form class="d-flex justify-content-left">
+>>>>>>> 42aa3216342ef9b184738601a9c72a050b2ac9a1
               <!-- Default input -->
               <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
               <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
@@ -58,6 +60,7 @@
 
            <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">Remove from cart
             </a>
+            </form>
 
           </div>
           <!--Content-->
@@ -121,3 +124,4 @@
     </div>
   </main>
      {% endblock content %}
+

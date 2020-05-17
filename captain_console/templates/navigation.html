@@ -10,20 +10,19 @@
 
 
     <div>
-       <ul class="navbar-nav ">
-           <li class="nav-item active" >
+       <div class="navbar-nav ">
                <a class="nav-link" id ="navitems" href="{% url 'production:products' %}"> Products <span class="sr-only">(current)</span></a>
-           </li>
-       </ul>
+       </div>
     </div>
 
     {% if user.is_authenticated  %}
-         <div class="dropdown">
+       <div class="dropdown">
             <a class="myAccount_btn dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account_btn" ><i id="icon" class="far fa-user"></i> &nbsp;&nbsp;My Account</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href=" {% url 'profile' %} ">View account</a>
             <a class="dropdown-item" href="{% url 'logout' %}">Sign out</a>
         </div>
+
 
 
     {% else %}
@@ -34,6 +33,7 @@
             <a class="dropdown-item" href="{% url 'register' %}">Register</a>
       </div>
     {% endif %}
+
     </div>
     {% if user.is_authenticated  %}
         <div class="bag"> <a href=" {% url 'production:order-summary' %}"> <i class="fas fa-shopping-cart" ></i>  </a> </div>

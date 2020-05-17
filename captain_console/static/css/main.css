@@ -38,9 +38,11 @@ header,
 }
 
 #navitems{
-    float: right;
-    margin-left: 950px;
+    margin-right: 70px;
+    margin-left: 123vh;
+
 }
+
 
 ul .navbar {
     float: right;

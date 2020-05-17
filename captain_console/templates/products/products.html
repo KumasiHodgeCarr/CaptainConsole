@@ -70,6 +70,7 @@
       <div class="col-sm-12 games">
         <div class="grid-container">
           {% for product in object_list %}
+
               <div class="grid-item" onclick='location.href = " {{ product.get_absolute_url }}";'>
                 <img class="imgs" src="{{ product.Product_image }}" alt="">
                 <p class="text-warning"><b>{{ product.Product_price }}$</b></p>
